@@ -9,10 +9,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /* Demo: Recuperar dados
-* Checklist:
-* (✓) Usar o script SQL para criar a base de dados "coursejdbc"
-* (✓) Fazer um pequeno programa para recuperar os departamentos
-* (✓) Na classe DB, criar métodos auxiliares estáticos para fechar ResultSet e Statement */
+ * Checklist:
+ * (✓) Usar o script SQL para criar a base de dados "coursejdbc"
+ * (✓) Fazer um pequeno programa para recuperar os departamentos
+ * (✓) Na classe DB, criar métodos auxiliares estáticos para fechar ResultSet e Statement */
 public class RetrieveData {
     public static void main(String[] args) {
         Connection connection;
@@ -28,13 +28,13 @@ public class RetrieveData {
             resultSet = statement.executeQuery("SELECT * FROM department");
 
             /* O método "next()" do "ResultSet" move o cursor para a próxima linha no conjunto de resultados e retorna
-            * "true" se houver mais linhas disponíveis para processamento. Portanto, este laço continuará enquanto
-            * houver mais linhas no conjunto de resultados. */
+             * "true" se houver mais linhas disponíveis para processamento. Portanto, este laço continuará enquanto
+             * houver mais linhas no conjunto de resultados. */
             while (resultSet.next()) {
                 /* Dentro do laço "while", estamos recuperando os valores das colunas "id" e "name" de cada linha do
-                * conjunto de resultados e imprimindo-os no console.
-                * - "resultSet.getInt("id")" retorna o valor da coluna "id" como um inteiro.
-                * - "resultSet.getString("name")" retorna o valor da coluna "name" como uma string. */
+                 * conjunto de resultados e imprimindo-os no console.
+                 * - "resultSet.getInt("id")" retorna o valor da coluna "id" como um inteiro.
+                 * - "resultSet.getString("name")" retorna o valor da coluna "name" como uma string. */
                 System.out.println(resultSet.getInt("id") + " - " + resultSet.getString("name"));
             }
 
