@@ -10,6 +10,10 @@ import java.util.Properties;
 public class DB {
     private static Connection connection = null;
 
+    private DB() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated.");
+    }
+
     /* Este método garante que apenas uma única instância de conexão seja criada e reutilizada sempre que necessário,
      * melhorando a eficiência e a gestão de recursos na aplicação. */
     public static Connection getConnection() {
