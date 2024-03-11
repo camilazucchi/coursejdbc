@@ -2,9 +2,7 @@ package db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 /* Nesta classe ficarão os métodos estáticos auxiliares, que, basicamente, servem para obter e fechar uma conexão com o
@@ -48,6 +46,31 @@ public class DB {
             return props;
         } catch (IOException e) {
             throw new DbException(e.getMessage());
+        }
+    }
+
+    /* Este método também é uma função utilitária igual ao método "closeStatement", mas este serve para fechar um
+    * objeto "ResultSet". */
+    public static void closeResultSet(ResultSet resultSet) {
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+        }
+    }
+
+    /* Este método é uma função utilitária para fechar um objeto "Statement". Ele faz uma verificação de nulidade para
+    * garantir que o objeto "Statement" não seja nulo antes de tentar fechar. Se o "statement" não for nulo, o bloco
+    * de código dentro do "if" será executado. */
+    public static void closeStatement(Statement statement) {
+        if (statement != null) {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
         }
     }
 }
