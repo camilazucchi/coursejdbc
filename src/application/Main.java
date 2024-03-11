@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class Main {
     public static void main(String[] args) {
-        Connection connection = null;
+        Connection connection;
         Statement statement = null;
         ResultSet resultSet = null;
 
