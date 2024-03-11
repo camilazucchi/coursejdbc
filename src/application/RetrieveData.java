@@ -8,7 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Main {
+/* Demo: Recuperar dados
+* Checklist:
+* (✓) Usar o script SQL para criar a base de dados "coursejdbc"
+* (✓) Fazer um pequeno programa para recuperar os departamentos
+* (✓) Na classe DB, criar métodos auxiliares estáticos para fechar ResultSet e Statement */
+public class RetrieveData {
     public static void main(String[] args) {
         Connection connection;
         Statement statement = null;
