@@ -1,7 +1,6 @@
 package application;
 
 import db.DB;
-import db.DbException;
 import db.DbIntegrityException;
 
 import java.sql.Connection;
